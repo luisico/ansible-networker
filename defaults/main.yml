@@ -1,0 +1,13 @@
+---
+# Networker mode (server or client)
+networker_mode: client
+
+# Version to install (as stated in the rpm filenames)
+networker_version: 8.2.4.9-1
+
+# URL to the tar or zip file downloaded from EMC's site
+# This value cannot be empty
+networker_package_url:
+
+# Path to keep the rpm packages after extraction
+networker_package_path: /tmp/networker_packages

@@ -1,0 +1,13 @@
+---
+# Packages to install for each mode
+networker_packages:
+  server:
+    - lgtoserv
+    - lgtonode
+    - lgtoclnt
+    - lgtoman
+    - lgtonmc
+    - lgtolicm
+  client:
+    - lgtoclnt
+    - lgtoman
