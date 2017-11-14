@@ -3,7 +3,7 @@
   file: path={{networker_package_path}} state=directory
 
 - name: Download and extract software
-  unarchive: src={{networker_package_url}} dest={{networker_package_path}} copy=no creates='{{networker_package_path}}/linux_x86_64'
+  unarchive: dest={{networker_package_path}} src={{networker_package_url}} copy=no creates='{{networker_package_path}}/linux_x86_64'
 
 - include: server.yml
   when: networker_mode == 'server'
