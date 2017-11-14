@@ -6,7 +6,7 @@ networker_mode: client
 networker_version: 8.2.4.9-1
 
 # URL to the tar or zip file downloaded from EMC's site
-# This value cannot be empty
+# This value cannot be left empty
 networker_package_url:
 
 # Path to keep the rpm packages after extraction

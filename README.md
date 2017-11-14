@@ -12,6 +12,8 @@ This role currently does not initialize the console server. You need to manually
 service gst start
 ```
 
+Installation is based on the [official documentation](https://www.emc.com/collateral/TechnicalDocument/docu57695.pdf).
+
 Requirements
 ------------
 See `meta/main.yml`.
