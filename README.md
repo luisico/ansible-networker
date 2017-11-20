@@ -47,6 +47,8 @@ TODO
 - Automatically configure console server and enable gst service
 - Test on rhel 7
 - Support storage nodes
+- Add servers files
+- Run /opt/lgtonmc/bin/nmc_config after installation
 
 Licence
 -------
