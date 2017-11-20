@@ -11,3 +11,6 @@ networker_packages:
   client:
     - lgtoclnt
     - lgtoman
+
+# Networker service handler for first installs
+networker_service_state_handler: Restart

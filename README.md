@@ -12,6 +12,8 @@ This role currently does not initialize the console server. You need to manually
 service gst start
 ```
 
+The main `networker` service can be prevented from starting on first install by setting `networker_start_on_first_install: no`. This can prove useful when doing Networker migrations to a new host.
+
 Installation is based on the [official documentation](https://www.emc.com/collateral/TechnicalDocument/docu57695.pdf).
 
 Requirements

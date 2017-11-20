@@ -1,3 +1,6 @@
 ---
 - name: Restart networker
   service: name=networker state=restarted
+
+- name: Stop networker
+  service: name=networker state=stopped

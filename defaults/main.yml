@@ -11,3 +11,6 @@ networker_package_url:
 
 # Path to keep the rpm packages after extraction
 networker_package_path: /tmp/networker_packages
+
+# Start networker on install
+networker_start_on_first_install: yes
