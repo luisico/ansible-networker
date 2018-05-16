@@ -5,8 +5,8 @@
 - name: Download and extract software
   unarchive: dest={{networker_package_path}} src={{networker_package_url}} copy=no creates='{{networker_package_path}}/linux_x86_64'
 
-- include: server.yml
+- import_tasks: server.yml
   when: networker_mode == 'server'
 
-- include: client.yml
+- import_tasks: client.yml
   when: networker_mode == 'client'

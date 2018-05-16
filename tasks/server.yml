@@ -8,7 +8,7 @@
   register: networker__r_installed
 
 - set_fact: networker_service_state_handler=Stop
-  when: networker__r_installed | failed and not networker_start_on_first_install
+  when: networker__r_installed is failed and not networker_start_on_first_install
 
 - name: Install Networker server
   yum: name='{{networker_package_path}}/linux_x86_64/{{item}}-{{networker_version}}.x86_64.rpm' state=present
