@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: networker
   author: Luis Gracia
   description: Install EMC Network in servers and clients
   license: MIT
