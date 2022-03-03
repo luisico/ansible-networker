@@ -1,19 +1,26 @@
 ---
-- name: Find if this is first installation
+- name: Find if this is first installation   # noqa: command-instead-of-module
   # Note: service not present or not configured
   command: service networker status
-  check_mode: no
+  check_mode: false
   ignore_errors: true
   changed_when: false
   register: networker__r_installed
 
-- set_fact: networker_service_state_handler=Stop
+- name: Set networker handler
+  set_fact:
+    networker_service_state_handler: Stop
   when: networker__r_installed is failed and not networker_start_on_first_install
 
 - name: Install Networker server
-  yum: name='{{networker_package_path}}/linux_x86_64/{{item}}-{{networker_version}}.x86_64.rpm' state=present
-  with_items: '{{networker_packages.server}}'
-  notify: '{{networker_service_state_handler}} networker'
+  yum:
+    name: '{{ networker_package_path }}/linux_x86_64/{{ item }}-{{ networker_version }}.x86_64.rpm'
+    state: present
+  with_items: '{{ networker_packages.server }}'
+  notify: '{{ networker_service_state_handler }} networker'
 
 - name: Enable server service
-  service: name=networker state={{'started' if networker_service_state_handler == 'Restart' else 'stopped'}} enabled=yes
+  service:
+    name: networker
+    state: '{{ "started" if networker_service_state_handler == "Restart" else "stopped" }}'
+    enabled: true
