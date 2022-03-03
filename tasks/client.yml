@@ -1,7 +1,12 @@
 ---
 - name: Install Networker client
-  yum: name='{{networker_package_path}}/linux_x86_64/{{item}}-{{networker_version}}.x86_64.rpm' state=present
-  with_items: '{{networker_packages.client}}'
+  yum:
+    name: '{{ networker_package_path }}/linux_x86_64/{{ item }}-{{ networker_version }}.x86_64.rpm'
+    state: present
+  with_items: '{{ networker_packages.client }}'
 
 - name: Enable and start client service
-  service: name=networker state=started enabled=yes
+  service:
+    name: networker
+    state: started
+    enabled: true

@@ -1,9 +1,16 @@
 ---
 - name: Make sure extraction directory is present
-  file: path={{networker_package_path}} state=directory
+  file:
+    path: '{{ networker_package_path }}'
+    state: directory
+    mode: '0750'
 
 - name: Download and extract software
-  unarchive: dest={{networker_package_path}} src={{networker_package_url}} copy=no creates='{{networker_package_path}}/linux_x86_64'
+  unarchive:
+    dest: '{{ networker_package_path }}'
+    src: '{{ networker_package_url }}'
+    copy: false
+    creates: '{{ networker_package_path }}/linux_x86_64'
 
 - import_tasks: server.yml
   when: networker_mode == 'server'

@@ -13,4 +13,4 @@ networker_package_url:
 networker_package_path: /tmp/networker_packages
 
 # Start networker on install
-networker_start_on_first_install: yes
+networker_start_on_first_install: true
